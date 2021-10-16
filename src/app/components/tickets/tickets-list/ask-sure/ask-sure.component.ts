@@ -43,6 +43,6 @@ export class AskSureComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(false);
   }
 }

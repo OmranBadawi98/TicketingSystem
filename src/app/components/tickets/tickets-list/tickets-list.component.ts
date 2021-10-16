@@ -62,7 +62,7 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
   }
 
   test: boolean;
-
+  chacked: boolean = false;
   openDialogASkSure(row: TicketModel) {
     let dialogRef = this.dialog.open(AskSureComponent, {
       disableClose: true,
@@ -71,8 +71,14 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe((res) => {
-      this.test = true;
-
+      if (res) {
+        this.test = true;
+      } else this.test = false;
+      // this.service.addItem(res).subscribe((res) => {
+      //   if (res.done == res.done) {
+      //     console.log('true');
+      //   } else console.log('false');
+      // });
       // if (res) {
       //   this.service.getData().subscribe((res) => {
       //     this.dataSource.data = res;
@@ -93,28 +99,24 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
       }
     });
   }
-  // Pipe(row?: TicketModel): string {
-  //   if (row) {
-  //     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
-  //       row.id + 1
-  //     }`;
-  //   }
-  //   return 'Error Rows';
-  // }
 
   public isChecked;
-  checkboxLabel(row?: TicketModel): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
-    }
-    // this.isChecked = true;
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
-      row.id + 1
-    }`;
+  checkboxLabel(row?: TicketModel) {
+    // if (!row) {
+    //   return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    // }
+    // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
+    //   row.id + 1
+    // }`;
   }
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
-  }
+  // this.isChecked = true;
+  // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
+  //   row.id + 1
+  // }`;
+
+  // isAllSelected() {
+  //   const numSelected = this.selection.selected.length;
+  //   const numRows = this.dataSource.data.length;
+  //   return numSelected === numRows;
+  // }
 }

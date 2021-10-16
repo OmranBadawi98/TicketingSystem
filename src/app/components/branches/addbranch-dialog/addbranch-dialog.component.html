@@ -1,100 +1,76 @@
 <h1 mat-dialog-title>New Branch</h1>
 <!-- reactive Form -->
 <mat-dialog-content>
-  <form [formGroup]="form" class="d-flex flex-column align-items-center h5">
-    <mat-form-field class="form-group w-100">
+  <form [formGroup]="form" class="d-flex flex-column align-items-center">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="name">Name</mat-label>
-      <input
-        matInput
-        formControlName="name"
-        id="name"
-        type="text"
-        class="form-control"
-      />
+      <input matInput formControlName="name" id="name" type="text" />
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="ip">IP</mat-label>
       <input
         matInput
         formControlName="ip"
         id="ip"
         type="text"
-        class="form-control"
         placeholder="172.30.0.190"
       />
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="countPc">Count Pc</mat-label>
-      <input
-        matInput
-        formControlName="countPc"
-        id="countPc"
-        type="number"
-        class="form-control"
-      />
+      <input matInput formControlName="countPc" id="countPc" type="number" />
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="receiptPrinter">Receipt Printer</mat-label>
       <input
         matInput
         formControlName="receiptPrinter"
         id="receiptPrinter"
         type="number"
-        class="form-control"
       />
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="barcode">Barcode</mat-label>
-      <input
-        matInput
-        formControlName="barcode"
-        id="barcode"
-        type="number"
-        class="form-control"
-      />
+      <input matInput formControlName="barcode" id="barcode" type="number" />
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="psSader">Print Server Sader </mat-label>
       <input
         matInput
         formControlName="psSader"
         id="psSader"
         type="text"
-        class="form-control"
         placeholder="172.30.0.200"
       />
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="psWared">Print Server Wared </mat-label>
       <input
         matInput
         formControlName="psWared"
         id="psWared"
         type="text"
-        class="form-control"
         placeholder="172.30.0.201"
       />
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="detail">Another Details</mat-label>
       <textarea
         matInput
         formControlName="detail"
         id="detail"
         type="text"
-        class="form-control"
         placeholder="Type Some Details...."
       >
       </textarea>
     </mat-form-field>
-    <mat-form-field class="form-group w-100">
+    <mat-form-field class="form-group w-100 h6" appearance="outline">
       <mat-label for="note">Notes</mat-label>
       <textarea
         matInput
         formControlName="note"
         id="note"
         type="text"
-        class="form-control"
         placeholder="Type Notes..."
       >
       </textarea>

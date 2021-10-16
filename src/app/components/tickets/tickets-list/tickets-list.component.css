@@ -24,7 +24,6 @@ tr.mat-header-row {
 }
 th.mat-sort-header-sorted {
   color: black;
-  background-color: red;
 }
 .mat-header-cell {
   color: gray;
@@ -52,4 +51,9 @@ th.mat-sort-header-sorted {
 }
 .row-disabled {
   background-color: red;
+}
+
+.mat-column-status {
+  text-align: end;
+  width: 108px;
 }

@@ -1,18 +1,6 @@
 {
   "branchData": [
     {
-      "id": 4,
-      "name": "Mazzeh-Street",
-      "ip": "172.30.83.190",
-      "countPc": 6,
-      "receiptPrinter": 2,
-      "barcode": 2,
-      "psSader": 2,
-      "psWared": 2,
-      "detail": "detail",
-      "note": "notes"
-    },
-    {
       "id": 5,
       "name": "Mazzeh-Street",
       "ip": "172.30.83.190",
@@ -376,6 +364,13 @@
       "from": "Data Base",
       "to": "Network",
       "id": 29
+    },
+    {
+      "issue": "sdafsdf",
+      "description": "asdasdas",
+      "from": "Network",
+      "to": "Network",
+      "id": 30
     }
   ]
 }

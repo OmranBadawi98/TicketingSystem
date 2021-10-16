@@ -52,5 +52,6 @@ th.mat-sort-header-sorted {
   background-color: #6495ed;
 }
 .mat-column-tools {
-  width: fit-content;
+  /* width: fit-content; */
+  text-align: end;
 }

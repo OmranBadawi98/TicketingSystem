@@ -1,0 +1,45 @@
+<div class="form-div p-6">
+  <h1 class="pb-4">Register Page</h1>
+  <form [formGroup]="form" class="container">
+    <div class="justify-content-around text-center h6">
+      <mat-form-field class="form-group w-75" appearance="outline">
+        <mat-label for="name">User Name</mat-label>
+        <input
+          matInput
+          formControlName="name"
+          id="name"
+          type="text"
+          placeholder="Enter User Name ..."
+        />
+      </mat-form-field>
+      <mat-form-field class="form-group w-75" appearance="outline">
+        <mat-label for="pass">Password</mat-label>
+        <input
+          matInput
+          formControlName="pass"
+          id="pass"
+          type="password"
+          placeholder="Enter Password ..."
+        />
+      </mat-form-field>
+    </div>
+    <div class="col text-center">
+      <button
+        mat-raised-button
+        class="btn btn-success mr-3"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Register
+      </button>
+      <button
+        mat-stroked-button
+        type="button"
+        class="btn-light btn"
+        routerLink="/login"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</div>

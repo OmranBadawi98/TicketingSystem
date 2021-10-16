@@ -1,0 +1,19 @@
+/* .example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+} */
+
+.example-margin {
+  margin-right: 10px;
+}
+h1 {
+  font-size: 25px;
+}
+mat-label {
+  font-size: 20px;
+}
+mat-radio-group {
+  margin-left: 12px;
+}

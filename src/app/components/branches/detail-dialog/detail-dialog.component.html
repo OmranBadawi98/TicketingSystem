@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>{{ dataDetail.name }}</h1>
+<mat-dialog-content>
+  <div class="item">
+    <h3 class="textItem">Count PC : {{ dataDetail.countPc }}</h3>
+  </div>
+  <div class="item">
+    <h3 class="textItem">IP Address : {{ dataDetail.ip }}</h3>
+  </div>
+
+  <div class="item">
+    <h3 class="textItem">Receipt Printer : {{ dataDetail.receiptPrinter }}</h3>
+  </div>
+  <div class="item">
+    <h3 class="textItem">Barcodes : {{ dataDetail.barcode }}</h3>
+  </div>
+  <div class="item">
+    <h3 class="textItem">Print Server "Sader" : {{ dataDetail.psSader }}</h3>
+  </div>
+  <div class="item">
+    <h3 class="textItem">Print Server "Wared" : {{ dataDetail.psWared }}</h3>
+  </div>
+  <div class="item">
+    <h3 class="textItem">Another Detail :{{ dataDetail.detail }}</h3>
+  </div>
+  <div class="item">
+    <h3 class="textItem">Notes : {{ dataDetail.note }}</h3>
+  </div>
+  <div>
+    <button
+      mat-stroked-button
+      mat-dialog-close
+      (click)="onNoClick()"
+      class="btn-light btn"
+    >
+      Close
+    </button>
+  </div>
+</mat-dialog-content>

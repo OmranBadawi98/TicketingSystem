@@ -1,0 +1,72 @@
+<h1>Edit Ticket</h1>
+<form [formGroup]="form">
+  <div>
+    <mat-form-field class="form-group w-75" appearance="outline">
+      <mat-label for="description">Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        id="description"
+        type="text"
+        name="description"
+      >
+      </textarea>
+    </mat-form-field>
+    <div class="form-group" appearance="outline">
+      <mat-label for="redirection">Redirection</mat-label>
+      <mat-radio-group formControlName="redirection" id="redirection">
+        <mat-radio-button
+          class="example-margin"
+          value="Yes"
+          (click)="toggleShow()"
+          >Yes</mat-radio-button
+        >
+        <mat-radio-button
+          class="example-margin"
+          value="No"
+          (click)="toggleShow2()"
+          >No</mat-radio-button
+        >
+      </mat-radio-group>
+    </div>
+    <div *ngIf="isShown">
+      <mat-form-field class="form-group w-75">
+        <mat-label for="destination">Destination</mat-label>
+        <mat-select formControlName="destination" id="destination">
+          <mat-option *ngFor="let pow of destinations" [value]="pow">
+            {{ pow }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form-group w-75">
+        <mat-label for="issue">Issue</mat-label>
+        <input
+          matInput
+          formControlName="issue"
+          id="issue"
+          type="text"
+          name="issue"
+          #issue
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <button
+        mat-raised-button
+        class="btn btn-success mr-3"
+        type="submit"
+        (click)="editItem()"
+      >
+        Submit
+      </button>
+      <button
+        mat-raised-button
+        type="button"
+        class="btn-light btn"
+        [routerLink]="['/tickets/list']"
+      >
+        Back
+      </button>
+    </div>
+  </div>
+</form>

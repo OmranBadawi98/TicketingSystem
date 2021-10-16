@@ -1,0 +1,13 @@
+.item {
+  margin: 6px;
+  border: 1;
+  background-color: #d1e0f0;
+  border-radius: 12px;
+}
+.textItem {
+  padding: 12px;
+  font-weight: bold;
+}
+h1 {
+  font-weight: bold;
+}

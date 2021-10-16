@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.mat-row:nth-child(even) {
+  background-color: rgb(248, 255, 255);
+}
+
+.mat-row:nth-child(odd) {
+  /* background-color: #f5fffa; */
+}
+tr.mat-header-row {
+  /* background-color: rgb(248, 255, 255); */
+}
+th.mat-sort-header-sorted {
+  color: black;
+  background-color: red;
+  cursor: pointer;
+}
+.itemsHover:hover {
+  /* opacity: 20%; */
+  background-color: rgb(248, 255, 255);
+}
+.addBran {
+  text-align: end;
+  margin-top: 2rem;
+}
+.mat-header-cell {
+  color: gray;
+  font-size: 18px;
+  /* font-weight: bold; */
+}
+.mat-cell,
+.mat-footer-cell {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(65, 63, 63);
+}
+.buttonEdit {
+  color: #868e96;
+}
+#deleteButton {
+  color: #dc3545;
+}
+#addButton {
+  color: #ffffff;
+}
+.addButton {
+  width: 60px;
+  height: 60px;
+  background-color: #6495ed;
+}
+.mat-column-tools {
+  width: fit-content;
+}

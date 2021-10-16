@@ -1,0 +1,381 @@
+{
+  "branchData": [
+    {
+      "id": 4,
+      "name": "Mazzeh-Street",
+      "ip": "172.30.83.190",
+      "countPc": 6,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": 2,
+      "psWared": 2,
+      "detail": "detail",
+      "note": "notes"
+    },
+    {
+      "id": 5,
+      "name": "Mazzeh-Street",
+      "ip": "172.30.83.190",
+      "countPc": 6,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": 2,
+      "psWared": 2,
+      "detail": "detail",
+      "note": "notes"
+    },
+    {
+      "id": 6,
+      "name": "Mazzeh-Street",
+      "ip": "172.30.83.190",
+      "countPc": 6,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": 2,
+      "psWared": 2,
+      "detail": "detail",
+      "note": "notes"
+    },
+    {
+      "id": 9,
+      "name": "Mazzeh-Street",
+      "ip": "172.30.83.190",
+      "countPc": 6,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": 2,
+      "psWared": 2,
+      "detail": "detail",
+      "note": "notes"
+    },
+    {
+      "id": 10,
+      "name": "Mazzeh-Street",
+      "ip": "172.30.83.190",
+      "countPc": 6,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": 2,
+      "psWared": 2,
+      "detail": "detail",
+      "note": "notes"
+    },
+    {
+      "name": "zahra",
+      "ip": "172.30.176.50",
+      "countPc": 2,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": "172.30.146.200",
+      "psWared": "172.30.176.201",
+      "detail": "first detail",
+      "note": "No Notes",
+      "id": 11
+    },
+    {
+      "name": "test",
+      "ip": "10.10.10.10",
+      "countPc": 2,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": "10.10.0.1",
+      "psWared": "10.10.102.2",
+      "detail": "null",
+      "note": "null",
+      "id": 12
+    },
+    {
+      "name": "sdfadsfs",
+      "ip": "dfsddfsdf",
+      "countPc": 32,
+      "receiptPrinter": 132,
+      "barcode": 122,
+      "psSader": "2qdwxas",
+      "psWared": "12312daxsz",
+      "detail": "sazx",
+      "note": "sdzx",
+      "id": 14
+    },
+    {
+      "name": "ewadsasdf",
+      "ip": "asdfasdf",
+      "countPc": 123,
+      "receiptPrinter": 213,
+      "barcode": 21312,
+      "psSader": "wed3wqd",
+      "psWared": "weweaf",
+      "detail": "dwqdwed",
+      "note": "wewqeqd",
+      "id": 15
+    },
+    {
+      "name": "x  bvcxbbv",
+      "ip": "nhgfcvbnvhgcf",
+      "countPc": 234,
+      "receiptPrinter": 2342,
+      "barcode": 234,
+      "psSader": "324",
+      "psWared": "234",
+      "detail": "ef",
+      "note": "23e",
+      "id": 16
+    },
+    {
+      "name": "obada",
+      "ip": "10.10.16.100",
+      "countPc": 2,
+      "receiptPrinter": 2,
+      "barcode": 2,
+      "psSader": "2",
+      "psWared": "2",
+      "detail": "sksdf",
+      "note": "sdl,fds",
+      "id": 18
+    },
+    {
+      "name": "omran",
+      "ip": "oasdasc",
+      "countPc": 2,
+      "receiptPrinter": 5,
+      "barcode": 2,
+      "psSader": "5",
+      "psWared": "5AGDYGSDASD",
+      "detail": "7GDSDAG",
+      "note": "HASDHSADA",
+      "id": 20
+    }
+  ],
+  "ticketsData": [
+    {
+      "id": 1,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 2,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 3,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 4,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 5,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 6,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 7,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 8,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 9,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 10,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 11,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 12,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 13,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 14,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 15,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 16,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 17,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 18,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 19,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": 20,
+      "issue": "Fix printer",
+      "from": "dair-Hafir",
+      "to": "Support",
+      "description": "",
+      "done": false
+    },
+    {
+      "issue": "Agent",
+      "from": "Technical Support",
+      "to": "Data Base",
+      "id": 21,
+      "description": "",
+      "done": false
+    },
+    {
+      "issue": "Agent",
+      "from": "Technical Support",
+      "to": "Data Base",
+      "id": 22,
+      "description": "",
+      "done": false
+    },
+    {
+      "issue": "Domain",
+      "from": "Network",
+      "to": "System",
+      "description": "Can't join to Domain",
+      "id": 23,
+      "done": false
+    },
+    {
+      "issue": "print server",
+      "from": "Data Base",
+      "to": "Technical Support",
+      "description": "jasmaca",
+      "id": 24,
+      "done": false
+    },
+    {
+      "issue": "asccasx",
+      "from": "Data Base",
+      "to": "Technical Support",
+      "description": "ascasxsa",
+      "id": 25,
+      "done": false
+    },
+    {
+      "issue": "asccasx",
+      "from": "Data Base",
+      "to": "Technical Support",
+      "description": "ascasxsa",
+      "id": 26,
+      "done": false
+    },
+    {
+      "issue": "asfd",
+      "from": "Technical Support",
+      "to": "Technical Support",
+      "description": "vdacasc",
+      "id": 27,
+      "done": false
+    },
+    {
+      "issue": "asfd",
+      "from": "Technical Support",
+      "to": "Technical Support",
+      "description": "vdacasc",
+      "id": 28,
+      "done": false
+    },
+    {
+      "issue": "asdsadasd",
+      "description": "asdsadas",
+      "from": "Data Base",
+      "to": "Network",
+      "id": 29
+    }
+  ]
+}

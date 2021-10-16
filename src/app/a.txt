@@ -1,0 +1,248 @@
+import { MatPaginator } from '@angular/material/paginator';
+import { MatAccordion } from '@angular/material/expansion';
+import { SelectionModel } from '@angular/cdk/collections';
+import { MatTableDataSource } from '@angular/material/table';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+
+import { ELEMENTDATA } from '../shared/ticketsData';
+import { TicketsModel } from '../shared/tickets.model';
+
+@Component({
+  selector: 'app-tickets-list',
+  templateUrl: './tickets-list.component.html',
+  styleUrls: ['./tickets-list.component.css'],
+})
+export class TicketsListComponent implements OnInit, AfterViewInit {
+  data = ELEMENTDATA;
+
+  displayedColumns: string[] = [
+    'position',
+    'issue',
+    'from',
+    'to',
+    'recived',
+    'wrecived',
+    'done',
+    'edit',
+  ];
+  dataSource = new MatTableDataSource<TicketsModel>(this.data);
+  selection = new SelectionModel<TicketsModel>(true, []);
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatAccordion) accordion!: MatAccordion;
+  panelOpenState = false;
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+  checkboxLabel(row?: TicketsModel): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
+      row.position + 1
+    }`;
+  }
+  ngOnInit() {}
+}
+
+// export interface PeriodicElement {
+//   position: number;
+//   issue: string;
+//   from: string;
+//   to: string;
+//   recived: boolean;
+//   wrecived: string;
+//   done: boolean;
+// }
+
+// const ELEMENTDATA: PeriodicElement[] = [
+//   {
+//     position: 1,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 2,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 3,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 4,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 5,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 6,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 7,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 8,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 9,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 10,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 11,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 12,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 13,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 14,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 15,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 16,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 17,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 18,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 19,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+//   {
+//     position: 20,
+//     issue: 'string',
+//     from: 'string',
+//     to: 'string',
+//     recived: true,
+//     wrecived: 'string',
+//     done: true,
+//   },
+// ];
+
+// /**
+//  * @title Table with pagination
+//  */

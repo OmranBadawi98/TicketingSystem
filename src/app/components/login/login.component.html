@@ -1,0 +1,52 @@
+<div class="form-div p-6">
+  <h1 class="pb-4">Login Page</h1>
+  <form [formGroup]="form" class="container">
+    <div class="justify-content-around text-center h6">
+      <mat-form-field class="form-group w-75" appearance="outline">
+        <mat-label for="username">User Name :</mat-label>
+        <input
+          matInput
+          formControlName="username"
+          id="username"
+          type="text"
+          name="username"
+          #username
+          required
+        />
+        <mat-error *ngIf="form.controls.username?.hasError('required')"
+          >filed is Required</mat-error
+        >
+        <mat-error *ngIf="form.controls.username?.hasError('minlength')"
+          >minimum length is 4
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-group w-75" appearance="outline">
+        <mat-label for="password">Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          id="password"
+          type="password"
+          name="password"
+          #password
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="col text-center">
+      <button
+        mat-raised-button
+        class="btn btn-success mr-3 w-50"
+        type="button"
+        (click)="login(username.value, password.value)"
+        [disabled]="!form.valid"
+      >
+        Login
+      </button>
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="message">
+      {{ message }}
+    </div>
+  </form>
+</div>

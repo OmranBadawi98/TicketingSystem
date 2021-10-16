@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>New Ticket</h1>
+<!-- reactive Form -->
+<mat-dialog-content>
+  <form [formGroup]="form" class="d-flex flex-column align-items-center">
+    <mat-form-field class="form-group w-100" appearance="outline">
+      <mat-label for="issue">Issue</mat-label>
+      <input
+        matInput
+        formControlName="issue"
+        id="issue"
+        type="text"
+        name="issue"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-group w-100" appearance="outline">
+      <mat-label for="description">Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        id="description"
+        type="text"
+        name="description"
+      >
+      </textarea>
+    </mat-form-field>
+    <mat-form-field class="form-group w-100" appearance="outline">
+      <mat-label>From</mat-label>
+      <mat-select formControlName="from">
+        <mat-option *ngFor="let des of destinations" [value]="des">
+          {{ des }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form-group w-100" appearance="outline">
+      <mat-label>TO</mat-label>
+      <mat-select formControlName="to">
+        <mat-option *ngFor="let des of destinations" [value]="des">
+          {{ des }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <button
+        mat-raised-button
+        class="btn btn-success mr-3"
+        type="button"
+        (click)="submit()"
+        [disabled]="!form.valid"
+      >
+        Submit
+      </button>
+      <button mat-stroked-button (click)="onNoClick()" class="btn-light btn">
+        Close
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

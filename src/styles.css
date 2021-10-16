@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("~@angular/material/prebuilt-themes/indigo-pink.css");
+@import url("~bootstrap/dist/css/bootstrap.min.css");
+
+@import url("~ng-busy/src/style/busy.css");
+
+* {
+  font-family: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #07c010;
+}
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  display: flex;
+}

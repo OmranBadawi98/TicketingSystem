@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Are You Sure ?</h1>
+<!-- reactive Form -->
+<mat-dialog-content>
+  <button
+    mat-raised-button
+    class="btn btn-success mr-3"
+    type="submit"
+    (click)="submit()"
+    [value]="true"
+  >
+    Submit
+  </button>
+  <button mat-stroked-button (click)="onNoClick()" class="btn-light btn">
+    Close
+  </button>
+</mat-dialog-content>
+<!-- [(ngModel)]="data.done"
+    [attr.disabled]="data.done == false ? true : false" -->

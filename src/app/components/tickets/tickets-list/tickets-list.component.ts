@@ -9,14 +9,12 @@ import {
   OnInit,
   AfterViewInit,
   ViewChild,
-  ChangeDetectorRef,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { merge, Subscription } from 'rxjs';
-
+import { Subscription } from 'rxjs';
 import { Columns } from '../../../core/model/ticket.model';
 import { MatDialog } from '@angular/material/dialog';
-import { delay, startWith, switchMap, map } from 'rxjs/operators';
+import { delay, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { AskSureComponent } from './ask-sure/ask-sure.component';
@@ -29,7 +27,6 @@ import { AskSureComponent } from './ask-sure/ask-sure.component';
 })
 export class TicketsListComponent implements OnInit, AfterViewInit {
   busy: Subscription;
-  // isLoadding = new Subject<boolean>();
   displayedColumns = Columns;
   panelOpenState = false;
   dataSource = new MatTableDataSource<TicketModel>();
@@ -37,14 +34,11 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  private unsubscribe = new Subject<void>();
 
-  constructor(
-    public dialog: MatDialog,
-    private service: TicketsService,
-    private cdr: ChangeDetectorRef
-  ) {
-    // this.isLoadding.next(true);
-  }
+  constructor(public dialog: MatDialog, private service: TicketsService) {}
+  status: boolean;
+  chacked: boolean = false;
   ngAfterViewInit() {
     // this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
   }
@@ -52,17 +46,14 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.busy = this.service
       .getData()
-      .pipe(delay(500))
+      .pipe(delay(500), takeUntil(this.unsubscribe))
       .subscribe((itemData) => {
-        //  this.isLoadding.next(false);
         this.dataSource.data = itemData;
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       });
   }
 
-  test: boolean;
-  chacked: boolean = false;
   openDialogASkSure(row: TicketModel) {
     let dialogRef = this.dialog.open(AskSureComponent, {
       disableClose: true,
@@ -70,37 +61,45 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
       data: { row: row.done },
     });
 
-    dialogRef.afterClosed().subscribe((res) => {
-      if (res) {
-        this.test = true;
-      } else this.test = false;
-      // this.service.addItem(res).subscribe((res) => {
-      //   if (res.done == res.done) {
-      //     console.log('true');
-      //   } else console.log('false');
-      // });
-      // if (res) {
-      //   this.service.getData().subscribe((res) => {
-      //     this.dataSource.data = res;
-      //     this.dataSource.paginator = this.paginator;
-      //     this.dataSource.sort = this.sort;
-      //   });
-      // }
-    });
+    dialogRef
+      .afterClosed()
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe((res) => {
+        if (res) {
+          this.status = true;
+        } else this.status = false;
+        // this.service.addItem(res).subscribe((res) => {
+        //   if (res.done == res.done) {
+        //     console.log('true');
+        //   } else console.log('false');
+        // });
+        // if (res) {
+        //   this.service.getData().subscribe((res) => {
+        //     this.dataSource.data = res;
+        //     this.dataSource.paginator = this.paginator;
+        //     this.dataSource.sort = this.sort;
+        //   });
+        // }
+      });
   }
   openDialogAdd() {
     const dailogref = this.dialog.open(AddTicketsDialogComponent, {
       disableClose: true,
       width: '500px',
     });
-    dailogref.afterClosed().subscribe((res) => {
-      if (res) {
-        this.service.getData().subscribe((res) => (this.dataSource.data = res));
-      }
-    });
+    dailogref
+      .afterClosed()
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe((res) => {
+        if (res) {
+          this.service
+            .getData()
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe((res) => (this.dataSource.data = res));
+        }
+      });
   }
 
-  public isChecked;
   checkboxLabel(row?: TicketModel) {
     // if (!row) {
     //   return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
@@ -119,4 +118,10 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
   //   const numRows = this.dataSource.data.length;
   //   return numSelected === numRows;
   // }
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
+  }
 }

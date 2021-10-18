@@ -10,6 +10,7 @@
     <mat-icon id="addButton">add</mat-icon>
   </button>
 </div>
+
 <table
   mat-table
   [dataSource]="table"
@@ -80,3 +81,4 @@
   ></tr>
 </table>
 <!-- (onDeleteItem)="deleteItem(row)" -->
+<div [ngBusy]="{ busy: busy }"></div>

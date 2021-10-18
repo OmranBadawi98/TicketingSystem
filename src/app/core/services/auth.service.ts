@@ -7,16 +7,14 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   public isLoggedIn: BehaviorSubject<boolean>;
   login(user: string, password: string): Observable<boolean> {
-    if (user === 'user' && password === 'password') {
+    if (user === 'user' && password === '123') {
       localStorage.setItem('username', user);
-      // this.isLoggedIn.next(true);
       return of<boolean>(true);
     }
-    // this.isLoggedIn.next(false);
     return of<boolean>(false);
   }
 
-  logout(): any {
+  logout() {
     this.isLoggedIn.next(false);
     localStorage.removeItem('username');
   }

@@ -109,28 +109,16 @@
       "id": 16
     },
     {
-      "name": "obada",
-      "ip": "10.10.16.100",
-      "countPc": 2,
+      "name": "Akram",
+      "ip": "10.10.17.1",
+      "countPc": 6,
       "receiptPrinter": 2,
-      "barcode": 2,
-      "psSader": "2",
-      "psWared": "2",
-      "detail": "sksdf",
-      "note": "sdl,fds",
-      "id": 18
-    },
-    {
-      "name": "omran",
-      "ip": "oasdasc",
-      "countPc": 2,
-      "receiptPrinter": 5,
-      "barcode": 2,
-      "psSader": "5",
-      "psWared": "5AGDYGSDASD",
-      "detail": "7GDSDAG",
-      "note": "HASDHSADA",
-      "id": 20
+      "barcode": 3,
+      "psSader": "null",
+      "psWared": "null",
+      "detail": "windows 7 ",
+      "note": "will change to windows 10",
+      "id": 17
     }
   ],
   "ticketsData": [
@@ -371,6 +359,108 @@
       "from": "Network",
       "to": "Network",
       "id": 30
+    },
+    {
+      "issue": "sdfsd",
+      "description": "sdfsdfsd",
+      "from": "Technical Support",
+      "to": "Data Base",
+      "id": 31
+    },
+    {
+      "description": "gergferferf",
+      "redirection": "Yes",
+      "destination": "Network",
+      "issue": "wefwefwdew",
+      "id": 32
+    },
+    {
+      "description": "dfdsfsdfsd",
+      "redirection": "Yes",
+      "destination": "Network",
+      "issue": "fgvsdgsdfsdf",
+      "id": 33
+    },
+    {
+      "description": "gbdffd",
+      "redirection": "Yes",
+      "from": "Technical Support",
+      "to": "Network",
+      "issue": "dvsdafvsdfv",
+      "id": 34
+    },
+    {
+      "description": "helooooooooooo",
+      "redirection": "No",
+      "from": "Technical Support",
+      "to": "",
+      "issue": "",
+      "id": 35
+    },
+    {
+      "description": "sdfsdfasdfasds",
+      "redirection": "No",
+      "from": "Technical Support",
+      "to": "",
+      "issue": "",
+      "id": 36
+    },
+    {
+      "description": "fghfhdgdghdgh",
+      "redirection": "No",
+      "from": "Technical Support",
+      "to": "",
+      "issue": "",
+      "id": 37
+    },
+    {
+      "description": "gdfgsdfsdfsd",
+      "redirection": "No",
+      "from": "Technical Support",
+      "to": "",
+      "issue": "",
+      "id": 38
+    },
+    {
+      "description": "gdfgsdfsdfsd",
+      "redirection": "No",
+      "from": "Technical Support",
+      "to": "",
+      "issue": "",
+      "id": 39
+    },
+    {
+      "description": "fsdfsdfsd",
+      "redirection": "Yes",
+      "from": "Technical Support",
+      "to": "Data Base",
+      "issue": "fewfwefewfwref",
+      "id": 40
+    },
+    {
+      "id": 41
+    },
+    {
+      "description": "hellooo",
+      "redirection": "Yes",
+      "from": "Technical Support",
+      "to": "System",
+      "issue": "Hello Again",
+      "id": 42
+    },
+    {
+      "issue": "omran",
+      "description": "help",
+      "from": "Data Base",
+      "to": "Network",
+      "id": 43
+    },
+    {
+      "issue": "agent",
+      "description": "ad",
+      "from": "Technical Support",
+      "to": "Data Base",
+      "id": 44
     }
   ]
 }

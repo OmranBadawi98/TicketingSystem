@@ -28,14 +28,14 @@ th.mat-sort-header-sorted {
 }
 .mat-header-cell {
   color: gray;
-  font-size: 18px;
+  font-size: 15px;
   /* font-weight: bold; */
 }
 .mat-cell,
 .mat-footer-cell {
   font-size: 16px;
-  font-weight: bold;
-  color: rgb(65, 63, 63);
+  font-weight: 500;
+  color: rgb(43, 42, 42);
 }
 .buttonEdit {
   color: #868e96;

@@ -9,6 +9,7 @@
         id="description"
         type="text"
         name="description"
+        rows="6"
       >
       </textarea>
     </mat-form-field>
@@ -30,24 +31,25 @@
       </mat-radio-group>
     </div>
     <div *ngIf="isShown">
-      <mat-form-field class="form-group w-75">
-        <mat-label for="destination">Destination</mat-label>
-        <mat-select formControlName="destination" id="destination">
+      <mat-form-field class="form-group w-75" appearance="outline">
+        <mat-label>Destination</mat-label>
+        <mat-select formControlName="to">
           <mat-option *ngFor="let pow of destinations" [value]="pow">
             {{ pow }}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field class="form-group w-75">
+      <mat-form-field class="form-group w-75" appearance="outline">
         <mat-label for="issue">Issue</mat-label>
-        <input
+        <textarea
           matInput
           formControlName="issue"
           id="issue"
           type="text"
           name="issue"
+          rows="6"
           #issue
-        />
+        ></textarea>
       </mat-form-field>
     </div>
     <div>

@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" *ngIf="isLoggedIn" opened
+  <mat-drawer #drawer mode="side" *ngIf="isLoggedIn" opened
     ><div class="sideLabel">
       <mat-icon id="dashboardIcon1">dashboard</mat-icon>
       <div id="labelAdmin">Admin</div>
@@ -16,6 +16,7 @@
       </div>
     </div>
   </mat-drawer>
+
   <mat-drawer-content>
     <mat-toolbar color="primary" class="justify-content-between toolbar">
       <div id="test" *ngIf="isLoggedIn">
@@ -79,7 +80,6 @@
           <mat-menu #menu="matMenu">
             <button
               mat-menu-item
-              *ngIf="isLoggedIn"
               class="text-primary font-weight-bold text-center h6"
             >
               <span

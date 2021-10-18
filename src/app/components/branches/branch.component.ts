@@ -6,10 +6,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DetailDialogComponent } from './detail-dialog/detail-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { BranColumn, BranchModel } from 'src/app/core/model/branch.model';
-
 import { AddbranchDialogComponent } from './addbranch-dialog/addbranch-dialog.component';
-import { switchMap, takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { delay, switchMap, takeUntil } from 'rxjs/operators';
+import { Subject, Subscription } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 
 @Component({
@@ -19,37 +18,33 @@ import { MatSort } from '@angular/material/sort';
   providers: [BranchService],
 })
 export class BranchComponent implements OnInit, AfterViewInit {
+  busy: Subscription;
   table = new MatTableDataSource<BranchModel>();
   displayedColumns = BranColumn;
-  private unsubscribe = new Subject<void>();
-
   @ViewChild(MatSort) sort: MatSort;
+  private unsubscribe = new Subject<void>();
 
   constructor(public dialog: MatDialog, private service: BranchService) {}
   ngAfterViewInit() {
-    console.log('Sort');
     // this.table.sort = this.sort;
   }
   ngOnInit(): void {
-    this.service
+    this.busy = this.service
       .getData()
-      .pipe(takeUntil(this.unsubscribe))
+      .pipe(delay(500), takeUntil(this.unsubscribe))
       .subscribe((itemData) => {
         this.table.data = itemData;
         this.table.sort = this.sort;
       });
   }
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
-  }
 
   onDelete(deleted: BranchModel) {
     this.service
       .deleteItem(deleted)
-      .pipe(switchMap((res) => this.service.getData()))
+      .pipe(
+        switchMap((res) => this.service.getData()),
+        takeUntil(this.unsubscribe)
+      )
       .subscribe((res) => {
         this.table.data = res;
         console.log(res);
@@ -81,5 +76,11 @@ export class BranchComponent implements OnInit, AfterViewInit {
         this.service.getData().subscribe((res) => (this.table.data = res));
       }
     });
+  }
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }

@@ -3,6 +3,8 @@
 
 @import url("~ng-busy/src/style/busy.css");
 
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css");
+
 * {
   font-family: inherit;
 }
@@ -10,6 +12,7 @@
 html,
 body {
   height: 100%;
+  width: 100%;
   font-family: "Poppins", "Roboto", sans-serif;
 }
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,

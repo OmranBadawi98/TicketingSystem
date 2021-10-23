@@ -1,35 +1,54 @@
 <div>
   <h1>Welcome To Dashboard Omran !!</h1>
 </div>
-<div class="father">
-  <div class="left">
-    <div class="row1">
-      <div class="left1">
-        All Branches
-        <p>{{ allBranches }}</p>
+<div class="d-flex flex-row flex-wrap mt-5">
+  <div class="col-6 d-flex flex-column h5 justify-content-end">
+    <div
+      class="
+        d-flex
+        flex-row
+        mb-5
+        mr-2 mr-sm-2 mr-lg-2 mr-md-2 mr-xl-5
+        mb-sm-5 mb-md-5
+      "
+      style="height: 12rem"
+    >
+      <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 mr-5 p-0">
+        <div class="card-header font-weight-normal">All Branches</div>
+        <p class="card-body font-weight-light text-secondary">
+          {{ allBranches }} Branches
+        </p>
       </div>
-      <div class="left2">
-        All Tickets
-        <p>{{ allTickets }}</p>
+      <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 p-0">
+        <div class="card-header font-weight-normal">All Tickets</div>
+        <p class="card-body font-weight-light text-secondary">
+          {{ allTickets }} Tickets
+        </p>
       </div>
     </div>
-    <div class="row2">
-      <div class="left3">
-        Completed Tickets
-        <p>--</p>
+    <div
+      class="
+        d-flex
+        flex-row
+        mr-2 mr-sm-2 mr-lg-2 mr-md-2 mr-xl-5
+        mb-sm-5 mb-md-5 mb-5
+      "
+      style="height: 12rem"
+    >
+      <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 mr-5 p-0">
+        <div class="card-header font-weight-normal">Completed Tickets</div>
+        <p class="card-body font-weight-light text-secondary">--</p>
       </div>
-      <div class="left4">
-        Errors
-        <p>--</p>
+      <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 p-0">
+        <div class="card-header font-weight-normal">Errors</div>
+        <p class="card-body font-weight-light text-secondary">--</p>
       </div>
     </div>
   </div>
-  <div class="right">
-    <div class="row3">
-      <div class="chart">
-        Chart
-        <app-barchart class="align-items-center"></app-barchart>
-      </div>
+  <div class="col">
+    <div class="card chart p-0" style="height: 27rem">
+      <div class="card-header w-auto h5 font-weight-normal">Chart</div>
+      <app-barchart class="card-body"></app-barchart>
     </div>
   </div>
 </div>

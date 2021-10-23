@@ -1,18 +1,6 @@
 {
   "branchData": [
     {
-      "id": 5,
-      "name": "Mazzeh-Street",
-      "ip": "172.30.83.190",
-      "countPc": 6,
-      "receiptPrinter": 2,
-      "barcode": 2,
-      "psSader": 2,
-      "psWared": 2,
-      "detail": "detail",
-      "note": "notes"
-    },
-    {
       "id": 6,
       "name": "Mazzeh-Street",
       "ip": "172.30.83.190",
@@ -107,18 +95,6 @@
       "detail": "ef",
       "note": "23e",
       "id": 16
-    },
-    {
-      "name": "Akram",
-      "ip": "10.10.17.1",
-      "countPc": 6,
-      "receiptPrinter": 2,
-      "barcode": 3,
-      "psSader": "null",
-      "psWared": "null",
-      "detail": "windows 7 ",
-      "note": "will change to windows 10",
-      "id": 17
     }
   ],
   "ticketsData": [
@@ -461,6 +437,69 @@
       "from": "Technical Support",
       "to": "Data Base",
       "id": 44
+    },
+    {
+      "issue": "fix",
+      "description": "jhnlkjnmlk;m",
+      "from": "Network",
+      "to": "Data Base",
+      "id": 45
+    },
+    {
+      "issue": "http",
+      "description": "kasdmkjasd",
+      "from": "Data Base",
+      "to": "Network",
+      "id": 46
+    },
+    {
+      "issue": "SDFVSDVC",
+      "description": "KLDSFSDA",
+      "from": "Technical Support",
+      "to": "Technical Support",
+      "id": 47
+    },
+    {
+      "id": 48
+    },
+    {
+      "id": 49
+    },
+    {
+      "id": 50
+    },
+    {
+      "id": 51
+    },
+    {
+      "id": 52
+    },
+    {
+      "id": 53
+    },
+    {
+      "id": 54
+    },
+    {
+      "id": 55
+    },
+    {
+      "id": 56
+    },
+    {
+      "id": 57
+    },
+    {
+      "id": 58
+    },
+    {
+      "id": 59
+    },
+    {
+      "id": 60
+    },
+    {
+      "id": 61
     }
   ]
 }

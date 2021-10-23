@@ -18,7 +18,6 @@ export class CanLoadGuard implements CanLoad {
     | boolean
     | UrlTree {
     this.auth.isLoggedIn.subscribe((res) => (this.isLoggedIn = res));
-    // console.log('CanLoad', this.isLoggedIn);
     if (this.isLoggedIn) {
       return true;
     } else this.router.navigateByUrl('/login');

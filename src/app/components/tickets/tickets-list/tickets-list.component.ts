@@ -37,7 +37,6 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
   private unsubscribe = new Subject<void>();
 
   constructor(public dialog: MatDialog, private service: TicketsService) {}
-  status: boolean;
   chacked: boolean = false;
   ngAfterViewInit() {
     // this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
@@ -53,33 +52,25 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
         this.dataSource.sort = this.sort;
       });
   }
-
   openDialogASkSure(row: TicketModel) {
+    row;
     let dialogRef = this.dialog.open(AskSureComponent, {
       disableClose: true,
       width: '500px',
       data: { row: row.done },
     });
-
     dialogRef
       .afterClosed()
       .pipe(takeUntil(this.unsubscribe))
       .subscribe((res) => {
-        if (res) {
-          this.status = true;
-        } else this.status = false;
-        // this.service.addItem(res).subscribe((res) => {
-        //   if (res.done == res.done) {
-        //     console.log('true');
-        //   } else console.log('false');
-        // });
-        // if (res) {
-        //   this.service.getData().subscribe((res) => {
-        //     this.dataSource.data = res;
-        //     this.dataSource.paginator = this.paginator;
-        //     this.dataSource.sort = this.sort;
-        //   });
-        // }
+        this.service
+          .getData()
+          .pipe(takeUntil(this.unsubscribe))
+          .subscribe((itemData) => {
+            this.dataSource.data = itemData;
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+          });
       });
   }
   openDialogAdd() {
@@ -99,7 +90,14 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
         }
       });
   }
+  // change(item) {
+  //   console.log(item, 'this is item in Change');
 
+  //   this.service.changeStatus(item).subscribe((res) => {
+  //     // this.dataSource.data = item;
+  //     console.log(res, 'this is res in subscribe in change');
+  //   });
+  // }
   checkboxLabel(row?: TicketModel) {
     // if (!row) {
     //   return `${this.isAllSelected() ? 'deselect' : 'select'} all`;

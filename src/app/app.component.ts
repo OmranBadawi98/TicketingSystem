@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable, of, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map, startWith, takeUntil } from 'rxjs/operators';
 import { AuthService } from './core/services/auth.service';
 
@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   ngOnInit() {
-    // this.isLoggedIn = false;
     this.auth.getUser();
     this.auth.isLoggedIn
       .pipe(takeUntil(this.unsubscribe))
@@ -36,6 +35,7 @@ export class AppComponent implements OnInit {
       map((value) => this._filter(value))
     );
   }
+  show: Boolean = false;
 
   logoutnow() {
     console.log('LogOut');

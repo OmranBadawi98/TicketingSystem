@@ -5,23 +5,51 @@
       <div id="labelAdmin">Admin</div>
     </div>
     <div class="sideItem">
-      <div class="item1" routerLink="/dashboard">
+      <span class="item1" routerLink="/dashboard">
         <mat-icon id="dashboardIcon">pages</mat-icon>Dashboard
-      </div>
-      <div class="item2" routerLink="/tickets">
+      </span>
+      <span class="item2" routerLink="/tickets">
         <mat-icon id="dashboardIcon">label_important</mat-icon>Tickets
-      </div>
-      <div class="item3" routerLink="/branches">
+      </span>
+      <span class="item3" routerLink="/branches">
         <mat-icon id="dashboardIcon">business</mat-icon>Branche
-      </div>
+      </span>
     </div>
   </mat-drawer>
 
   <mat-drawer-content>
-    <mat-toolbar color="primary" class="justify-content-between toolbar">
-      <div id="test" *ngIf="isLoggedIn">
+    <mat-toolbar color="primary" class="toolbar justify-content-between">
+      <div class="d-flex" *ngIf="isLoggedIn">
+        <button mat-button [matMenuTriggerFor]="menu" class="mr-3 clickMenu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button
+            mat-menu-item
+            class="text-primary font-weight-light h6"
+            routerLink="/dashboard"
+          >
+            Dashboard
+          </button>
+          <button
+            mat-menu-item
+            class="text-primary font-weight-light h6"
+            routerLink="/tickets"
+          >
+            Tickets
+          </button>
+          <button
+            mat-menu-item
+            class="text-primary font-weight-light h6"
+            routerLink="/branches"
+          >
+            Branche
+          </button>
+        </mat-menu>
+
         <input
           mat-input
+          class="border-0"
           type="text"
           placeholder="Search..."
           [formControl]="control"
@@ -41,7 +69,7 @@
           Welcome To Ticketing System Please Login ...
         </h2>
       </div>
-      <div id="test">
+      <div class="d-flex">
         <button
           style="z-index: 10"
           mat-stroked-button
@@ -51,7 +79,7 @@
             mr-4
             text-secondary
             h6
-            font-weight-bold
+            font-weight-normal
           "
           *ngIf="!isLoggedIn"
           routerLink="/register"
@@ -60,42 +88,28 @@
           Register
         </button>
 
-        <button
-          *ngIf="isLoggedIn"
-          style="z-index: 10"
-          mat-icon-button
-          class="example-icon favorite-icon"
-          aria-label="Example icon-button with heart icon"
-        >
-          <mat-icon>notifications</mat-icon>
+        <button *ngIf="isLoggedIn" style="z-index: 10" mat-button>
+          <mat-icon class="text-black-50">notifications_none</mat-icon>
         </button>
-        <button
-          [matMenuTriggerFor]="menu"
-          *ngIf="isLoggedIn"
-          mat-icon-button
-          class="example-icon"
-          aria-label="Example icon-button with share icon"
-        >
-          <mat-icon>account_circle</mat-icon>
-          <mat-menu #menu="matMenu">
-            <button
-              mat-menu-item
-              class="text-primary font-weight-bold text-center h6"
+        <button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn" mat-button>
+          <mat-icon class="text-black-50">account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button
+            mat-menu-item
+            class="text-primary font-weight-normal text-center h6"
+          >
+            <span
+              *ngIf="isLoggedIn"
+              (click)="logoutnow()"
+              routerLink="/login"
+              style="color: rgba(235, 63, 63, 0.904); z-index: 10"
             >
-              <span
-                *ngIf="isLoggedIn"
-                (click)="logoutnow()"
-                routerLink="/login"
-                style="color: rgba(235, 63, 63, 0.904)"
-              >
-                {{ logout }}
-              </span>
-              <div *ngIf="!isLoggedIn">{{ login }}</div>
-            </button>
-          </mat-menu>
-        </button>
-        <!-- </div> -->
-        <!-- </mat-toolbar-row> -->
+              {{ logout }}
+            </span>
+            <div *ngIf="!isLoggedIn">{{ login }}</div>
+          </button>
+        </mat-menu>
       </div>
     </mat-toolbar>
 

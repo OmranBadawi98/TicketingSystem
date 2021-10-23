@@ -73,7 +73,9 @@ mat-drawer {
   height: 4rem;
 }
 span:hover,
-span:hover mat-icon {
+span:hover mat-icon,
+span:focus,
+span:focus mat-icon {
   cursor: pointer;
   background-color: #eaecec;
   color: #5a8dee;

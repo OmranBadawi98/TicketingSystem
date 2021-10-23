@@ -16,12 +16,7 @@ export class TicketsService {
     return this.http.post<TicketModel>(this.apiUrl, item);
   }
   doneItem(item: TicketModel): Observable<TicketModel> {
-    item.done;
     console.log('in PUT Request');
     return this.http.put<TicketModel>(this.apiUrl, item);
   }
-  // changeStatus(item: TicketModel): Observable<TicketModel> {
-  //   console.log('in PUT Request', item.status);
-  //   return this.http.post<TicketModel>(this.apiUrl, item.status);
-  // }
 }

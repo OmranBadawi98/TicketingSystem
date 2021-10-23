@@ -25,9 +25,7 @@ export class BranchComponent implements OnInit, AfterViewInit {
   private unsubscribe = new Subject<void>();
 
   constructor(public dialog: MatDialog, private service: BranchService) {}
-  ngAfterViewInit() {
-    // this.table.sort = this.sort;
-  }
+  ngAfterViewInit() {}
   ngOnInit(): void {
     this.busy = this.service
       .getData()

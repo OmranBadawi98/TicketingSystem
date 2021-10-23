@@ -8,10 +8,8 @@ table {
 }
 
 .mat-row:nth-child(odd) {
-  /* background-color: #f5fffa; */
 }
 tr.mat-header-row {
-  /* background-color: rgb(248, 255, 255); */
   background-color: rgba(249, 253, 253, 0.884);
 }
 th.mat-sort-header-sorted {
@@ -20,8 +18,7 @@ th.mat-sort-header-sorted {
   cursor: pointer;
 }
 .itemsHover:hover {
-  /* opacity: 20%; */
-  background-color: rgb(248, 255, 255);
+  background-color: #c5d2e9;
 }
 .addBran {
   text-align: end;
@@ -30,7 +27,6 @@ th.mat-sort-header-sorted {
 .mat-header-cell {
   color: gray;
   font-size: 15px;
-  /* font-weight: bold; */
 }
 .mat-cell,
 .mat-footer-cell {
@@ -53,6 +49,5 @@ th.mat-sort-header-sorted {
   background-color: #6495ed;
 }
 .mat-column-tools {
-  /* width: fit-content; */
   text-align: end;
 }

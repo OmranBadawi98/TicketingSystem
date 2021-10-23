@@ -38,9 +38,7 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
 
   constructor(public dialog: MatDialog, private service: TicketsService) {}
   chacked: boolean = false;
-  ngAfterViewInit() {
-    // this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
-  }
+  ngAfterViewInit() {}
 
   ngOnInit() {
     this.busy = this.service
@@ -90,35 +88,10 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
         }
       });
   }
-  // change(item) {
-  //   console.log(item, 'this is item in Change');
 
-  //   this.service.changeStatus(item).subscribe((res) => {
-  //     // this.dataSource.data = item;
-  //     console.log(res, 'this is res in subscribe in change');
-  //   });
-  // }
-  checkboxLabel(row?: TicketModel) {
-    // if (!row) {
-    //   return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
-    // }
-    // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
-    //   row.id + 1
-    // }`;
-  }
-  // this.isChecked = true;
-  // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
-  //   row.id + 1
-  // }`;
+  checkboxLabel(row?: TicketModel) {}
 
-  // isAllSelected() {
-  //   const numSelected = this.selection.selected.length;
-  //   const numRows = this.dataSource.data.length;
-  //   return numSelected === numRows;
-  // }
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this.unsubscribe.next();
     this.unsubscribe.complete();
   }

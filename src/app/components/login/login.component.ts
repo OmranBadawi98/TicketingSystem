@@ -22,8 +22,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log('inside ngOnInit login');
-    // this.isLoggedIn = this.auth.isLoggedIn.value
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(4)]],
       password: ['', [Validators.required]],
@@ -33,7 +31,6 @@ export class LoginComponent implements OnInit {
     this.auth.login(username, password).subscribe((res) => {
       if (res) {
         this.auth.getUser();
-        // this.isLoggedIn = !!this.auth.getUser();
         this.router.navigateByUrl('/dashboard');
       } else this.message = 'Credintial Error';
     });
@@ -42,10 +39,5 @@ export class LoginComponent implements OnInit {
   logout() {
     console.log('LogOut');
     this.auth.logout();
-    // this.isLoggedIn = !!this.auth.getUser();
   }
-
-  // submit() {
-  //   console.log(this.form.value);
-  // }
 }

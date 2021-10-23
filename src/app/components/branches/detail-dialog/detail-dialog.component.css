@@ -1,7 +1,7 @@
 .item {
   margin: 6px;
   border: 1;
-  background-color: #d1e0f0;
+  background-color: rgba(231, 233, 233, 0.884);
   border-radius: 12px;
 }
 .textItem {
@@ -9,5 +9,5 @@
   font-weight: bold;
 }
 h1 {
-  font-weight: bold;
+  font-weight: normal;
 }

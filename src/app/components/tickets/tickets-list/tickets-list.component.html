@@ -1,7 +1,6 @@
 <div>
   <h1 style="color: #475f7b">Ticket Analysis</h1>
 </div>
-<!-- <mat-spinner *ngIf="isLoadding | async"></mat-spinner> -->
 <div class="addBran">
   <button
     type="button"
@@ -39,25 +38,6 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>To</th>
       <td mat-cell *matCellDef="let element">{{ element.to }}</td>
     </ng-container>
-    <!-- recived Column -->
-    <!-- <ng-container matColumnDef="recived">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Recived</th>
-      <td mat-cell *matCellDef="let row">
-        <mat-checkbox
-          (click)="$event.stopPropagation()"
-          (change)="$event ? selection.toggle(row) : null"
-          [aria-label]="checkboxLabel(row)"
-        >
-        </mat-checkbox>
-      </td>
-    </ng-container> -->
-    <!-- Who Recived Column -->
-    <!-- <ng-container matColumnDef="wrecived">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Who Recived</th>
-      <td mat-cell *matCellDef="let element"></td>
-    </ng-container> -->
-
-    <!-- Done Column -->
 
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef mat-sort-header></th>

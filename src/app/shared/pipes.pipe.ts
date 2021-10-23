@@ -9,8 +9,5 @@ export class PipesPipe implements PipeTransform {
     if (value) {
       return 'Done';
     } else return 'In Progress';
-
-    // const status = ['In Progress', 'Done'];
-    // return status;
   }
 }

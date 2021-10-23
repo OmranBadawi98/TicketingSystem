@@ -3,8 +3,6 @@
 
 @import url("~ng-busy/src/style/busy.css");
 
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css");
-
 * {
   font-family: inherit;
 }

@@ -1,7 +1,13 @@
-<div>
-  <h1>Welcome To Dashboard Omran !!</h1>
-</div>
-<div class="d-flex flex-row flex-wrap mt-5">
+<h1 class="font-weight-lighter" style="color: #475f7b">
+  Welcome To Dashboard Omran !!
+</h1>
+<div
+  class="
+    d-flex
+    flex-row flex-wrap flex-sm-wrap flex-md-wrap flex-lg-wrap flex-xl-nowrap
+    mt-5
+  "
+>
   <div class="col-6 d-flex flex-column h5 justify-content-end">
     <div
       class="
@@ -14,13 +20,13 @@
       style="height: 12rem"
     >
       <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 mr-5 p-0">
-        <div class="card-header font-weight-normal">All Branches</div>
+        <div class="card-header font-weight-normal h6">All Branches</div>
         <p class="card-body font-weight-light text-secondary">
           {{ allBranches }} Branches
         </p>
       </div>
       <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 p-0">
-        <div class="card-header font-weight-normal">All Tickets</div>
+        <div class="card-header font-weight-normal h6">All Tickets</div>
         <p class="card-body font-weight-light text-secondary">
           {{ allTickets }} Tickets
         </p>
@@ -36,18 +42,21 @@
       style="height: 12rem"
     >
       <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 mr-5 p-0">
-        <div class="card-header font-weight-normal">Completed Tickets</div>
+        <div class="card-header font-weight-normal h6">Completed Tickets</div>
         <p class="card-body font-weight-light text-secondary">--</p>
       </div>
       <div class="card col-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 p-0">
-        <div class="card-header font-weight-normal">Errors</div>
+        <div class="card-header font-weight-normal h6">Errors</div>
         <p class="card-body font-weight-light text-secondary">--</p>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card chart p-0" style="height: 27rem">
-      <div class="card-header w-auto h5 font-weight-normal">Chart</div>
+    <div
+      class="card chart p-0 ml-0 ml-sm-0 ml-lg-0 ml-xl-3"
+      style="height: 27rem"
+    >
+      <div class="card-header font-weight-normal h6">Chart</div>
       <app-barchart class="card-body"></app-barchart>
     </div>
   </div>

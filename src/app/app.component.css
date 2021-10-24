@@ -1,23 +1,28 @@
 :host {
   height: 100%;
   margin: 0;
-  width: 100%;
+  /* width: 100%; */
 }
 .toolbar {
-  height: 4.6rem;
+  height: 3.5rem;
   color: white;
   padding-top: 0.4rem;
   background-color: #f2f4f4;
   border-bottom: 1px solid #e3e6e6;
+  margin-left: 0px;
+  /* position: absolute; */
   /* position: fixed; */
+  transition: all 0.3s;
 }
 
 .toolbar mat-icon {
   color: black;
-  justify-content: flex-end;
 }
+
 .example-container {
   height: 100%;
+  width: 100%;
+  margin: 0px;
 }
 
 .icons {
@@ -33,7 +38,7 @@ mat-drawer-content {
   background-color: #f2f4f4;
 }
 mat-drawer {
-  width: 250px;
+  width: 190px;
   background-color: #f2f4f4;
   color: #475f7b;
   border: 1px solid #e4e4e4;
@@ -44,7 +49,7 @@ mat-drawer {
   text-align: center;
   padding-top: 1.6rem;
   padding-right: 3.6rem;
-  font-size: 30px;
+  font-size: 25px;
   height: 4.6rem;
   color: #5a8dee;
   background-color: #f2f4f4;
@@ -52,7 +57,7 @@ mat-drawer {
 .sideItem {
   text-align: left;
   margin-top: 2rem;
-  font-size: 20px;
+  font-size: 16px;
 }
 .item1 {
   display: flex;
@@ -82,6 +87,7 @@ span:focus mat-icon {
 }
 .mainContent {
   margin: 2rem;
+  margin-top: 1rem;
 }
 
 .example-full-width {
@@ -96,19 +102,19 @@ button {
 }
 #dashboardIcon {
   display: flex;
-  margin-right: 8px;
-  font-size: 18px;
+  margin-right: 7px;
+  font-size: 16px;
 }
 
 #dashboardIcon1 {
   display: flex;
-  font-size: 30px;
-  padding-left: 2rem;
-  padding-top: 3px;
+  font-size: 25px;
+  padding-left: 1.5rem;
+  padding-top: 6px;
   color: #5a8dee;
 }
 #labelAdmin {
-  padding-left: 2.5rem;
+  padding-left: 2.3rem;
   padding-top: 9px;
 }
 @media only screen and (max-width: 600px) and (max-width: 100px) {
@@ -119,9 +125,12 @@ button {
 .clickMenu {
   display: none;
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
   mat-drawer {
     display: none;
+  }
+  .toolbar {
+    margin-left: 0px;
   }
   .clickMenu {
     display: block;

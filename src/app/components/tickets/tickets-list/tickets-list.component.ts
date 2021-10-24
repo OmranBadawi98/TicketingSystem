@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/core/services/auth.service';
 import { TicketModel } from './../../../core/model/ticket.model';
 import { AddTicketsDialogComponent } from './add-tickets-dialog/add-tickets-dialog.component';
 import { TicketsService } from '../../../core/services/tickets.service';
@@ -18,7 +19,8 @@ import { delay, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { AskSureComponent } from './ask-sure/ask-sure.component';
-
+import { ProgressBarMode } from '@angular/material/progress-bar';
+import { ThemePalette } from '@angular/material/core';
 @Component({
   selector: 'app-tickets-list',
   templateUrl: './tickets-list.component.html',
@@ -36,7 +38,11 @@ export class TicketsListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   private unsubscribe = new Subject<void>();
 
-  constructor(public dialog: MatDialog, private service: TicketsService) {}
+  constructor(
+    public dialog: MatDialog,
+    private service: TicketsService,
+    public loading: AuthService
+  ) {}
   chacked: boolean = false;
   ngAfterViewInit() {}
 

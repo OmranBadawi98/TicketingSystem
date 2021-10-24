@@ -26,13 +26,13 @@ th.mat-sort-header-sorted {
 }
 .mat-header-cell {
   color: gray;
-  font-size: 15px;
+  font-size: 13px;
 }
 .mat-cell,
 .mat-footer-cell {
-  font-size: 16px;
-  font-weight: 500;
-  color: rgb(43, 42, 42);
+  font-size: 14px;
+  font-weight: 450;
+  color: #475f7b;
 }
 .buttonEdit {
   color: #868e96;
@@ -44,10 +44,13 @@ th.mat-sort-header-sorted {
   color: #ffffff;
 }
 .addButton {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #6495ed;
 }
 .mat-column-tools {
   text-align: end;
+}
+ng-busy {
+  margin-top: 8rem;
 }

@@ -28,13 +28,13 @@ th.mat-sort-header-sorted {
 }
 .mat-header-cell {
   color: gray;
-  font-size: 15px;
+  font-size: 13px;
 }
 .mat-cell,
 .mat-footer-cell {
-  font-size: 16px;
-  font-weight: 500;
-  color: rgb(43, 42, 42);
+  font-size: 14px;
+  font-weight: 450;
+  color: #475f7b;
 }
 
 .mat-paginator {
@@ -46,8 +46,8 @@ th.mat-sort-header-sorted {
   color: #ffffff;
 }
 .addButton {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #5a8dee;
 }
 .row-disabled {

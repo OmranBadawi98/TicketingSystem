@@ -1,6 +1,4 @@
-<div>
-  <h1 style="color: #475f7b">Ticket Analysis</h1>
-</div>
+<h1 class="font-weight-lighter" style="color: #475f7b">Ticket Analysis</h1>
 <div class="addBran">
   <button
     type="button"
@@ -84,3 +82,6 @@
   </mat-paginator>
 </div>
 <div [ngBusy]="{ busy: busy }"></div>
+<div *ngIf="loading.isLoading | async">
+  <mat-progress-bar mode="indeterminate"> </mat-progress-bar>
+</div>

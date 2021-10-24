@@ -1,5 +1,10 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer #drawer mode="side" *ngIf="isLoggedIn" opened
+<mat-drawer-container class="example-container sticky-top sticky-offset">
+  <mat-drawer
+    #drawer
+    mode="side"
+    *ngIf="isLoggedIn"
+    opened
+    style="position: fixed; top: 0; left: 0; overflow-x: hidden"
     ><div class="sideLabel">
       <mat-icon id="dashboardIcon1">dashboard</mat-icon>
       <div id="labelAdmin">Admin</div>
@@ -16,11 +21,10 @@
       </span>
     </div>
   </mat-drawer>
-
   <mat-drawer-content>
-    <mat-toolbar color="primary" class="toolbar justify-content-between">
+    <nav class="toolbar navbar flex-nowrap static-top">
       <div class="d-flex" *ngIf="isLoggedIn">
-        <button mat-button [matMenuTriggerFor]="menu" class="mr-3 clickMenu">
+        <button mat-button [matMenuTriggerFor]="menu" class="clickMenu">
           <mat-icon>menu</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
@@ -46,10 +50,9 @@
             Branche
           </button>
         </mat-menu>
-
         <input
           mat-input
-          class="border-0"
+          class="border-0 shadow-sm form-control"
           type="text"
           placeholder="Search..."
           [formControl]="control"
@@ -64,12 +67,16 @@
           </mat-option>
         </mat-autocomplete>
       </div>
-      <div *ngIf="!isLoggedIn">
-        <h2 style="color: rgb(68, 67, 67)">
-          Welcome To Ticketing System Please Login ...
-        </h2>
+      <div
+        id="welcome"
+        class="pt-3"
+        style="color: rgb(68, 67, 67); margin-left: 0px"
+        *ngIf="!isLoggedIn"
+      >
+        <h2>Welcome To Ticketing System Please Login ...</h2>
       </div>
-      <div class="d-flex">
+
+      <div class="">
         <button
           style="z-index: 10"
           mat-stroked-button
@@ -87,31 +94,27 @@
         >
           Register
         </button>
-
-        <button *ngIf="isLoggedIn" style="z-index: 10" mat-button>
+        <button *ngIf="isLoggedIn" mat-icon-button>
           <mat-icon class="text-black-50">notifications_none</mat-icon>
         </button>
-        <button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn" mat-button>
+        <button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn" mat-icon-button>
           <mat-icon class="text-black-50">account_circle</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
           <button
             mat-menu-item
-            class="text-primary font-weight-normal text-center h6"
+            *ngIf="isLoggedIn"
+            (click)="logoutnow()"
+            routerLink="/login"
+            style="color: rgba(235, 63, 63, 0.904)"
+            class="font-weight-normal text-center h6"
           >
-            <span
-              *ngIf="isLoggedIn"
-              (click)="logoutnow()"
-              routerLink="/login"
-              style="color: rgba(235, 63, 63, 0.904); z-index: 10"
-            >
-              {{ logout }}
-            </span>
-            <div *ngIf="!isLoggedIn">{{ login }}</div>
+            {{ logout }}
           </button>
+          <button *ngIf="!isLoggedIn">{{ login }}</button>
         </mat-menu>
       </div>
-    </mat-toolbar>
+    </nav>
 
     <div class="mainContent">
       <router-outlet></router-outlet>

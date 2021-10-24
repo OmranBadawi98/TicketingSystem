@@ -7,7 +7,9 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   public isLoggedIn: BehaviorSubject<boolean>;
-
+  public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
   constructor(private router: Router) {
     this.isLoggedIn = new BehaviorSubject(false);
   }

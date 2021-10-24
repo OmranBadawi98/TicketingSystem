@@ -23,7 +23,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { NgBusyModule } from 'ng-busy';
 import { DirectivesDirective } from './directives.directive';
 import { PipesPipe } from './pipes.pipe';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 @NgModule({
   declarations: [DirectivesDirective, PipesPipe],
   imports: [CommonModule],
@@ -52,6 +52,7 @@ import { PipesPipe } from './pipes.pipe';
     NgBusyModule,
     DirectivesDirective,
     PipesPipe,
+    MatProgressBarModule,
   ],
 })
 export class SharedModule {}

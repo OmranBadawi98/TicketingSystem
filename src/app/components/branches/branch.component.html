@@ -1,4 +1,4 @@
-<h1 style="color: #475f7b">Branches Management</h1>
+<h1 class="font-weight-lighter" style="color: #475f7b">Branches Management</h1>
 
 <div class="addBran">
   <button
@@ -10,8 +10,10 @@
     <mat-icon id="addButton">add</mat-icon>
   </button>
 </div>
+<!-- <div class="position-relative" [ngBusy]="{ busy: busy, backdrop: false }"></div> -->
 
 <table
+  [ngBusy]="{ busy: busy }"
   mat-table
   [dataSource]="table"
   matSort
@@ -29,7 +31,6 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
     <td mat-cell *matCellDef="let element">{{ element.name }}</td>
   </ng-container>
-
   <!-- ip Column -->
   <ng-container matColumnDef="ip">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>IP</th>
@@ -80,4 +81,3 @@
     (onDeleteItem)="deleteItem(row)"
   ></tr>
 </table>
-<div [ngBusy]="{ busy: busy }"></div>

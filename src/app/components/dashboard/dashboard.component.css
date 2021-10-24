@@ -4,10 +4,10 @@
 }
 p {
   padding-top: 50px;
-  font-size: 35px;
+  font-size: 28px;
 }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
 }
 .h5 {
   color: rgba(89, 91, 92, 0.9);
